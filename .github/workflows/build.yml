@@ -25,7 +25,7 @@ jobs:
         # 프로젝트를 컴파일합니다.
 
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: linux-build
           path: path/to/build/artifacts
@@ -43,7 +43,7 @@ jobs:
         # 프로젝트를 컴파일합니다.
 
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: macos-build
           path: path/to/build/artifacts
@@ -74,7 +74,7 @@ jobs:
         # Makefile을 사용하여 빌드합니다.
 
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: windows-build
           path: path/to/build/artifacts
