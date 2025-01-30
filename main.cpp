@@ -4,6 +4,6 @@
 
 int main()
 {
-    std::cout << "--- HelloWorld Example ---\n";
+    std::cout << "--- File HelloWorld ---\n";
     printHelloWorldFromFile("helloworld.txt");
 }
