@@ -12,42 +12,43 @@ jobs:
   build-linux:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        # 리포지토리를 체크아웃합니다.
 
-    - name: Set up GCC
-      run: sudo apt-get install -y g++
+      - name: Set up GCC
+        run: sudo apt-get install -y g++
+        # GCC를 설치합니다.
 
-    - name: Compile project
-      run: make
+      - name: Compile project
+        run: make
+        # 프로젝트를 컴파일합니다.
 
   build-macos:
     runs-on: macos-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        # 리포지토리를 체크아웃합니다.
 
-    - name: Compile project
-      run: make
+      - name: Compile project
+        run: make
+        # 프로젝트를 컴파일합니다.
 
   build-windows:
     runs-on: windows-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        # 리포지토리를 체크아웃합니다.
 
-    - name: Set up MSYS2
-      uses: msys2/setup-msys2@v2
-      with:
-        update: true
-        install: >-
-          mingw-w64-x86_64-gcc
-          mingw-w64-x86_64-cmake
-          make
+      - name: Add MSYS2 to PATH
+        uses: actions/setup-msys2@v2
+        with:
+          msystem: MINGW64
+          install: mingw-w64-x86_64-gcc
+        # MSYS2를 PATH에 추가하고 필요한 패키지를 설치합니다.
 
-    - name: Add MSYS2 to PATH
-      run: echo "::add-path::C:\msys64\mingw64\bin"
-
-    - name: Build with Makefile
-      run: |
-        make
+      - name: Build with Makefile
+        run: make
+        # Makefile을 사용하여 빌드합니다.
