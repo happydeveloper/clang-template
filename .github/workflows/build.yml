@@ -26,9 +26,8 @@ jobs:
       - name: Compile project
         run: |
           make
-          cp *.out build/ || true
-          cp *.exe build/ || true
-        # 프로젝트를 컴파일합니다.
+          cp *.out build/
+        # Linux 빌드
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
@@ -50,9 +49,8 @@ jobs:
       - name: Compile project
         run: |
           make
-          cp *.out build/ || true
-          cp *.exe build/ || true
-        # 프로젝트를 컴파일합니다.
+          cp *.out build/
+        # macOS 빌드
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
@@ -87,8 +85,8 @@ jobs:
       - name: Build with Makefile
         run: |
           make
-          cp *.exe build/ || true
-        # Makefile을 사용하여 빌드합니다.
+          cp *.exe build/
+        # Windows 빌드
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
