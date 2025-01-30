@@ -28,7 +28,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: linux-build
-          path: path/to/build/artifacts
+          path: build/
         # 빌드 아티팩트를 업로드합니다.
 
   build-macos:
@@ -46,7 +46,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: macos-build
-          path: path/to/build/artifacts
+          path: build/
         # 빌드 아티팩트를 업로드합니다.
 
   build-windows:
@@ -66,7 +66,7 @@ jobs:
 
       - name: Add MSYS2 to PATH
         shell: bash
-        run: echo '::add-path::/c/msys64/mingw64/bin' >> $GITHUB_ENV
+        run: echo "C:/msys64/mingw64/bin" >> $GITHUB_PATH
         # MSYS2를 PATH에 추가합니다.
 
       - name: Build with Makefile
@@ -77,5 +77,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: windows-build
-          path: path/to/build/artifacts
+          path: build/
         # 빌드 아티팩트를 업로드합니다.
