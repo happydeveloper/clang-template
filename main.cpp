@@ -1,9 +1,9 @@
 #include <iostream>
 
-using namespace std;
+#include "helloworld.h"
 
 int main()
 {
-    std::cout << "--- Data Sturct Example ---\n";
-    std::cout << endl;
+    std::cout << "--- HelloWorld Example ---\n";
+    printHelloWorldFromFile("helloworld.txt");
 }
