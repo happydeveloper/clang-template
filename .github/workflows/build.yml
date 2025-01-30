@@ -20,8 +20,14 @@ jobs:
         run: sudo apt-get install -y g++
         # GCC를 설치합니다.
 
+      - name: Create build directory
+        run: mkdir -p build
+
       - name: Compile project
-        run: make
+        run: |
+          make
+          cp *.out build/ || true
+          cp *.exe build/ || true
         # 프로젝트를 컴파일합니다.
 
       - name: Upload build artifacts
@@ -38,8 +44,14 @@ jobs:
         uses: actions/checkout@v2
         # 리포지토리를 체크아웃합니다.
 
+      - name: Create build directory
+        run: mkdir -p build
+
       - name: Compile project
-        run: make
+        run: |
+          make
+          cp *.out build/ || true
+          cp *.exe build/ || true
         # 프로젝트를 컴파일합니다.
 
       - name: Upload build artifacts
@@ -69,8 +81,13 @@ jobs:
         run: echo "C:/msys64/mingw64/bin" >> $GITHUB_PATH
         # MSYS2를 PATH에 추가합니다.
 
+      - name: Create build directory
+        run: mkdir -p build
+
       - name: Build with Makefile
-        run: make
+        run: |
+          make
+          cp *.exe build/ || true
         # Makefile을 사용하여 빌드합니다.
 
       - name: Upload build artifacts
